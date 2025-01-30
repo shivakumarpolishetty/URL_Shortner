@@ -1,2 +1,6 @@
-# URL_Shortner
-In this springboot ,I build a microservice that ...shows how real time long urls are converted into shorter by local bases and third party api like  bilty 
+URL Shortener using Spring Boot
+This project is a URL Shortener built using Spring Boot, Spring MVC, Thymeleaf, and an H2 in-memory database. The application provides a microservice that offers two core functionalities: generating short URLs by storing long URLs in the database and integrating with Bitly as a third-party API for URL shortening. The frontend is developed using Thymeleaf as a server-side templating engine, ensuring seamless interaction with the backend.
+
+The first functionality allows users to shorten a URL by submitting a long URL through the application. The system then stores this URL in the H2 database and generates a unique identifier, which acts as the shortened URL. When a user clicks on or accesses the shortened URL, the application checks the database to see if the URL exists. If found, the original long URL is retrieved and redirected. If not, the application notifies the user that the URL has been saved and prompts them to try again later.
+
+The second functionality leverages the Bitly API as an external URL shortening service. Users can input a long URL, and instead of storing it in the database, the application forwards the request to Bitly, which returns a shortened URL. This provides an alternative way to generate short links using an industry-standard shortening service. The combination of in-house URL shortening and third-party API integration makes this project versatile and practical for real-world use.
