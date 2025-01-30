@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" th:href="@{/css/main.css}" />
+
+<title>HomePage</title>
+</head>
+
+<body >
+ 
+<div class="main">
+
+   <h1> URL shortener </h1>
+  
+       
+        
+        
+        <div class="container">
+        
+         <form id="urlForm"  method="post">
+            <input type="text" id="originalUrl"  name = "originalUrl" placeholder="Enter or paste URL" required>
+            <div>
+
+                <button type="submit" onclick="setFormAction('/shorturl')">through Database</button>
+                <button type="submit" onclick="setFormAction('/thirdparyapi')">Third partyapi </button>
+            </div>
+            <input th:value="${data}" type="text" id="shorturl" name="shorturl" placeholder="Shortened URL" readonly>
+        </form>
+        
+        
+<script type="text/javascript">
+
+ function setFormAction(actionurl)
+ {
+	 document.getElementById('urlForm').action=actionurl;
+ }
+
+
+</script>
+        
+        
+        
+        </div>
+        
+        
+ </div>       
+        
+
+
+
+</body>
+
+</html>
